@@ -1,0 +1,1 @@
+{"d_in": 6000, "d_h": 64, "d_out": 6, "mean": -1.756200296298971e-09, "std": 0.9995007514953613, "label_map": {"Sleep stage W": 0, "Sleep stage 1": 1, "Sleep stage 2": 2, "Sleep stage 3": 3, "Sleep stage 4": 4, "Sleep stage R": 5}}
