@@ -5,9 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 import json
 import numpy as np
 
-import secrets
-import hashlib
-import hmac
 import time
 import base64
 import io
@@ -67,3 +64,6 @@ def model_info():
         p = Path(name)
         info[name] = {"size": p.stat().st_size, "modified": p.stat().st_mtime} if p.exists() else None
     return info
+
+if __name__ == "__main__":
+    BuildModel() 

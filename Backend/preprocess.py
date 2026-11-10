@@ -3,17 +3,17 @@ import numpy as np
 from sklearn.model_selection import train_test_split 
 import torch
 
-label_map = {
-                "Sleep stage W": 0,
-                "Sleep stage 1": 1,
-                "Sleep stage 2": 2,
-                "Sleep stage 3": 3,
-                "Sleep stage 4": 4,
-                "Sleep stage R": 5
-            }
+annotation_mapping = {
+    'Sleep stage W': 0,
+    'Sleep stage 1': 1,
+    'Sleep stage 2': 2,
+    'Sleep stage 3': 3,
+    'Sleep stage 4': 4,  # Later -> Combine Stage 3 & 4 into standard N3
+    'Sleep stage R': 5
+}
 
 def convert_label(y):
-    y = [label_map[val] for val in y]
+    y = [annotation_mapping[val] for val in y]
     return np.array(y)
 
 def split_and_standardize(X,y,test_size=0.2,random_state=42):
@@ -48,7 +48,7 @@ def get_model_config(X_train, config = {}):
         {
             "mean":float(mean),
             "std":float(std),
-            "label_map":label_map,
+            "label_map":annotation_mapping,
         }
     )
     return config

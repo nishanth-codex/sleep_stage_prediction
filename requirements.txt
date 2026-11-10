@@ -1,4 +1,7 @@
 numpy
 mne
 torch
+fastapi
+json
+scikit-learn
 
